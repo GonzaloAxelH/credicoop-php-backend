@@ -3,7 +3,8 @@
 	include ('../conexion/Conexion.php');
 
 	header('Access-Control-Allow-Origin: *');
-
+echo "sdd";
+/*
 $data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["codigo"]) && $data["password"]){
 	$codigo =$data["codigo"];
@@ -18,5 +19,5 @@ if(isset($data["codigo"]) && $data["password"]){
 		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
 	}
 }
-
+*/
 ?>
