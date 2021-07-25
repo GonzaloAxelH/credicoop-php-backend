@@ -9,7 +9,6 @@ header('Access-Control-Allow-Origin: *');
 
 echo "sdsd";
 
-/*
 
 $data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["codigo"]) && $data["password"]){
@@ -27,5 +26,4 @@ if(isset($data["codigo"]) && $data["password"]){
 }
 
 
-*/
 ?>
