@@ -3,13 +3,13 @@
 	include ('../conexion/Conexion.php');
 
 	header('Access-Control-Allow-Origin: *');
-echo "sdd";
-/*
+
 $data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["codigo"]) && $data["password"]){
 	$codigo =$data["codigo"];
 	$password = $data["password"];
-	$resultado = mysqli_query($conexion,$consulta);
+	echo $codigo;
+/*	$resultado = mysqli_query($conexion,$consulta);
 	$consulta = "SELECT id_ccliente FROM cuentacliente WHERE contrasena='$password' AND idcliente='$codigo'";
 	$row_cnt = mysqli_num_rows($resultado);
 	if($row_cnt > 0){
@@ -18,6 +18,7 @@ if(isset($data["codigo"]) && $data["password"]){
 	}else{
 		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
 	}
-}
 */
+}
+
 ?>
