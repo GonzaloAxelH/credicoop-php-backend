@@ -8,7 +8,6 @@ $data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["codigo"]) && $data["password"]){
 	$codigo =$data["codigo"];
 	$password = $data["password"];
-	echo $codigo;
 	$resultado = mysqli_query($conexion,$consulta);
 	$consulta = "SELECT id_ccliente FROM cuentacliente WHERE contrasena='$password' AND idcliente='$codigo'";
 	echo $row_cnt = mysqli_num_rows($resultado);
