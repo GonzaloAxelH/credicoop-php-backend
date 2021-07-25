@@ -1,8 +1,9 @@
 <?php 
-
-include('../conexion/jwt.php');
+/*include('../conexion/jwt.php');
 include ('../conexion/Conexion.php');
+
 header('Access-Control-Allow-Origin: *');
+*/
 
 echo "sdsd";
 
@@ -19,5 +20,6 @@ if(isset($data["codigo"]) && $data["password"]){
 	}else{
 		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
 	}
-	
 }
+*/
+?>
