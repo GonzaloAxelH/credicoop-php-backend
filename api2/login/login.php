@@ -5,13 +5,9 @@ include ('../conexion/Conexion.php');
 header('Access-Control-Allow-Origin: *');
 
 $data = json_decode(file_get_contents('php://input'),true);
-echo "no encontro";
 if(isset($data["codigo"]) && $data["password"]){
 	$codigo =$data["codigo"];
 	$password = $data["password"];
-
-	echo "hola";
-
 	$resultado = mysqli_query($conexion,$consulta);
 	$consulta = "SELECT id_ccliente FROM cuentacliente WHERE contrasena='$password' AND idcliente='$codigo'";
 	
