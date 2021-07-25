@@ -9,9 +9,10 @@ if(isset($data["codigo"]) && $data["password"]){
 	$codigo =$data["codigo"];
 	$password = $data["password"];
 	echo $codigo;
-/*	$resultado = mysqli_query($conexion,$consulta);
+	$resultado = mysqli_query($conexion,$consulta);
 	$consulta = "SELECT id_ccliente FROM cuentacliente WHERE contrasena='$password' AND idcliente='$codigo'";
-	$row_cnt = mysqli_num_rows($resultado);
+	echo $row_cnt = mysqli_num_rows($resultado);
+/*
 	if($row_cnt > 0){
 		$resultado = createToken($codigo,$password);
 		echo $resultado;
