@@ -1,13 +1,17 @@
 <?php 
-/*include('../conexion/jwt.php');
+
+include('../conexion/jwt.php');
 include ('../conexion/Conexion.php');
 
 header('Access-Control-Allow-Origin: *');
-*/
+
+
 
 echo "sdsd";
 
-/*$data = json_decode(file_get_contents('php://input'),true);
+/*
+
+$data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["codigo"]) && $data["password"]){
 	$codigo =$data["codigo"];
 	$password = $data["password"];
@@ -21,5 +25,7 @@ if(isset($data["codigo"]) && $data["password"]){
 		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
 	}
 }
+
+
 */
 ?>
