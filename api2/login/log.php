@@ -12,8 +12,8 @@ if(isset($data["codigo"]) && $data["password"]){
 	$consulta = "SELECT id_ccliente FROM cuentacliente WHERE contrasena='$password' AND idcliente='$codigo'";
 	$resultado2 = mysqli_query($conexion,$consulta);
 	if($resultado2){	
-		echo "hola";
-		// $row_cnt = mysqli_num_rows($resultado);
+		
+		echo $row_cnt = mysqli_num_rows($resultado);
 	}
 	/*
 	if($row_cnt > 0){
