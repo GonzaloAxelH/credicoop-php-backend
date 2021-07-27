@@ -9,12 +9,13 @@ if(isset($data["codigo"]) && $data["password"]){
 	
 	$codigo =$data["codigo"];
 	$password = $data["password"];
-	$consulta ="SELECT id_ccliente FROM cuentacliente WHERE idcliente='$codigo' AND contrasena='${password}'";
+	$consulta ="SELECT * FROM cuentacliente WHERE idcliente='$codigo' AND contrasena='$password'";
+
 	$resultado = mysqli_query($conexion,$consulta);
 	$row_cnt = mysqli_num_rows($resultado);
 	if($row_cnt > 0){
 		$resultado = createToken($codigo,$password);
-		echo $resultado;
+		echo $row_cnt;
 	}else{
 		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
 	}
