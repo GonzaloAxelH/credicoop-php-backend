@@ -15,7 +15,7 @@ function getTable($tableName,$conexion){
 	$resultado = $query->fetch_all(MYSQLI_ASSOC);
 	$json = array();
 	foreach ($resultado as $data) {
-	$json['data'][]=$data;
+		$json['data'][]=$data;
 	}
 	return $json;
 }
