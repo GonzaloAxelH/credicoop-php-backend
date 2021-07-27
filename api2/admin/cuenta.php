@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 $data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["idAdmin"])){
 			$idAdmin = $data["idAdmin"];
-			$consulta = "SELECT nombres,apellidos,dni,celular,direccion,correo FROM cliente WHERE id_admin='$idAdmin'";
+			$consulta = "SELECT nombres,apellidos,dni,celular,direccion,correo FROM administrador WHERE id_admin='$idAdmin'";
 			$resultado = mysqli_query($conexion,$consulta);
 				if($resultado){
 					$row_cnt = mysqli_num_rows($resultado);
@@ -12,14 +12,14 @@ if(isset($data["idAdmin"])){
 							while ($fila = mysqli_fetch_row($resultado)) {	
 									$nombres=$fila[0];
 									$apellidos =$fila[1];
-									$correo = $fila[2];
-									$direccion = $fila[3];
-									$estadoCivil = $fila[4];
-									$fechaNac = $fila[5];				
+									$dni = $fila[2];
+									$celular = $fila[3];
+									$direccion = $fila[4];
+									$correo= $fila[5];				
 					
 								}
-								echo json_encode(array('nombres' =>$nombres,'apellidos'=>$apellidos,'correo'=> $correo,
-										'direccion'=> $direccion,'estadoCivil'=>$estadoCivil,'fechaNac' => $fechaNac));
+								echo json_encode(array('nombres' =>$nombres,'apellidos'=>$apellidos,'dni'=> $dni,
+										'telefono'=> $celular,'direccion'=>$direccion,'correo' => $correo));
 					}else{
 						echo json_encode(array('error' => "no encontrado","code" => "404"));
 					}
