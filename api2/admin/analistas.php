@@ -3,7 +3,7 @@ include('../conexion/Conexion.php');
 header('Access-Control-Allow-Origin: *');
 $data = json_decode(file_get_contents('php://input'),true);
 		$idUser = $data["idUser"];
-        $sql="SELECT * FROM gestordecobranza";
+        $sql="SELECT * FROM analista";
         $query = $conexion->query($sql);
         $resultado = $query->fetch_all(MYSQLI_ASSOC);
 	$json = array();
@@ -12,3 +12,4 @@ $data = json_decode(file_get_contents('php://input'),true);
    	}
     $jsonstring = json_encode($json);
     echo $jsonstring;
+
