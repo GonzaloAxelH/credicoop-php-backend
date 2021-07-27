@@ -7,9 +7,7 @@ function update($data,$conexion){
 	return json_encode(array('message:'=> "actualizado"));
 }
 
-function enviarResultado($resultado){
-	echo json_encode($resultado);
-}
+
 
 function getTable($tableName,$conexion){
 	$sql="SELECT * FROM " . $tableName;
