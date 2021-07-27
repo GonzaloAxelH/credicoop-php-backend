@@ -25,4 +25,5 @@ if(isset($data["idAdmin"])){
 					}
 				}
 }		
+/* reactorizar */
 	
