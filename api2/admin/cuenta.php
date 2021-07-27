@@ -2,8 +2,7 @@
 include('../conexion/Conexion.php');
 header('Access-Control-Allow-Origin: *');
 $data = json_decode(file_get_contents('php://input'),true);
-echo "h0la";
-if(isset($data["idAdmisn"])){
+if(isset($data["idAdmin"])){
 			$idAdmin = $data["idAdmin"];
 			$consulta = "SELECT nombres,apellidos,dni,celular,direccion,correo FROM cliente WHERE id_admin='$idAdmin'";
 			$resultado = mysqli_query($conexion,$consulta);
