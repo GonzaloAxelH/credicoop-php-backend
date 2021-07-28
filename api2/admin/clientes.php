@@ -7,7 +7,7 @@ $data = json_decode(file_get_contents('php://input'),true);
 
 
 if($data['update']){
-	update($data,$conexion);
+	echo update($data,$conexion);
 }else{
 	$resultado = getTable("cliente",$conexion);
 	echo json_encode($resultado);
