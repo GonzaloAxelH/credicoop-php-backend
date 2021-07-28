@@ -35,9 +35,8 @@ function getTable($tableName,$conexion){
 function insertar($data,$conexion){
 	$idcliente=(int)$data['id_cliente'];
 	$monto=(float)$data['monto'];
-	 $sql="INSERT INTO (id_cliente,monto) values($idcliente,$monto)";
-	//$conexion->query($sql);	
-	echo $sql;
-	//return json_encode(array('message:'=> "pago insertado"));
+	 $sql="INSERT INTO transaccion(idcliente,monto) values($idcliente,$monto)";
+	$conexion->query($sql);	
+	return json_encode(array('message:'=> "pago insertado"));
 }
 
