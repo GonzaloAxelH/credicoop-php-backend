@@ -5,12 +5,16 @@ function eliminar($id,$table,$conexion){
 		return json_encode(array('message:'=> "eliminado"));
 }
 
-function update($data,$table,$conexion){
+function update($data,$conexion){
 			$dni=$data['dni'];
 			$nombre=$data['nombre'];
 			$apellido=$data['apellido'];
 			$id=$data['id_cliente'];
-			$sql="UPDATE ".$table." SET dni='$dni',nombre='$nombre',apellidos='$apellido' where id_cliente='$id'";
+			$direccion=$data['direccion'];
+			$correo=$data['correo'];
+			$estadoCivil =$data['estadoCivil'];
+			$celular=$data['celular'];
+			$sql="UPDATE cliente SET dni='$dni',nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular='$celular',estadoCivil'$estadoCivil' where id_cliente='$id'";
 			$conexion->query($sql);
 	
 			return json_encode(array('message:'=> "actualizado"));
