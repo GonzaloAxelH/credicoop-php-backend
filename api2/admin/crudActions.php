@@ -15,9 +15,9 @@ function update($data,$conexion){
 			$estadoCivil =$data['estadoCivil'];
 			$celular=(int)$data['celular'];
 
-echo $sql="UPDATE cliente SET dni='$dni',nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular,estadoCivil='$estadoCivil' where id_cliente='$id'";
-			//$conexion->query($sql);	
-			//return json_encode(array('message:'=> "actualizado"));
+			 $sql="UPDATE cliente SET dni='$dni',nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular,estadoCivil='$estadoCivil' where id_cliente='$id'";
+			$conexion->query($sql);	
+			return json_encode(array('message:'=> "actualizado"));
 }
 
 
