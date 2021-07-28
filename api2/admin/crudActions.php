@@ -20,7 +20,6 @@ function update($data,$conexion){
 }
 
 
-
 function getTable($tableName,$conexion){
 	$sql="SELECT * FROM " . $tableName;
 	$query = $conexion->query($sql);
@@ -37,6 +36,6 @@ function insertar($data,$conexion){
 	$monto=(float)$data['monto'];
 	 $sql="INSERT INTO transaccion(idcliente,monto) values($idcliente,$monto)";
 	$conexion->query($sql);	
-	return json_encode(array('message:'=> "pago insertado"));
+	echo json_encode(array('message:'=> "pago insertado"));
 }
 
