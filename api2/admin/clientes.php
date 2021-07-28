@@ -8,7 +8,6 @@ $data = json_decode(file_get_contents('php://input'),true);
 
 if($data['update']){
 	update($data,$conexion);
-	echo json_encode($data);
 }else{
 	$resultado = getTable("cliente",$conexion);
 	echo json_encode($resultado);
