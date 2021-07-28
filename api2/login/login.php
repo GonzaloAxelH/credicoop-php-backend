@@ -15,9 +15,7 @@ if(isset($data["codigo"]) && $data["password"]){
 	$row_cnt = mysqli_num_rows($resultado);
 	if($row_cnt > 0){
 		$jwt= createToken($codigo,$password);
-		echo $row_cnt;
-
-		echo json_encode(array("jwt" =>$jwt,"codigo"=> $codigo));
+		echo json_encode(array('jwt' => $jwt,'codigo'=> $codigo));
 	}else{
 		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
 	}
