@@ -1,8 +1,10 @@
 <?php 
 
+header('Access-Control-Allow-Origin: https://credicoop-f2bb3.web.app');
+
 include('../conexion/jwt.php');
 include ('../conexion/Conexion.php');
-header('Access-Control-Allow-Origin: https://credicoop-f2bb3.web.app/');
+
 echo "";
 $data = json_decode(file_get_contents('php://input'),true);
 if(isset($data["codigo"]) && $data["password"]){
