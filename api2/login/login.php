@@ -21,9 +21,9 @@ if(isset($data["codigo"]) && $data["password"]){
 		$codigo =$data["codigo"];
 		$password = $data["password"];
 		$consulta2 ="SELECT * FROM cuentaadmin WHERE idadmin='$codigo' AND contrasena='$password'";
-		$resultado2 = mysqli_query($conexion,$consulta);
-		$row_cnt2 = mysqli_num_rows($resultado);
-		if($row_cnt > 0){
+		$resultado2 = mysqli_query($conexion,$consulta2);
+		$row_cnt2 = mysqli_num_rows($resultado2);
+		if($row_cnt2 > 0){
 			$jwt= createToken($codigo,$password);
 			echo json_encode(array('jwt_admin' => $jwt,'codigo_admin'=> $codigo));
 		}else{
