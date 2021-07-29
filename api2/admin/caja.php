@@ -2,7 +2,7 @@
 
 include('../conexion/Conexion.php');
 include('./crudActions.php');
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: https://credicoop-f2bb3.web.app/');
 
 $resultado = getTable("caja",$conexion);
 
