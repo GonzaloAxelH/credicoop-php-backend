@@ -2,7 +2,7 @@
 function eliminar($dni,$conexion){
 			$sql="DELETE FROM cliente where dni='$dni'";
 			$conexion->query($sql);  
-			return json_encode(array('message:'=> "eliminado"));
+			return json_encode(array('message:'=> "eliminado","consulta"=> $sql));
 }
 
 function update($data,$conexion){
