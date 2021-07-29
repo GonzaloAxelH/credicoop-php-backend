@@ -13,11 +13,22 @@ if(isset($data["codigo"]) && $data["password"]){
 
 	$resultado = mysqli_query($conexion,$consulta);
 	$row_cnt = mysqli_num_rows($resultado);
+
 	if($row_cnt > 0){
 		$jwt= createToken($codigo,$password);
 		echo json_encode(array('jwt' => $jwt,'codigo'=> $codigo));
 	}else{
-		echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
+		$codigo =$data["codigo"];
+		$password = $data["password"];
+		$consulta2 ="SELECT * FROM cuentaadmin WHERE idadmin='$codigo' AND contrasena='$password'";
+		$resultado2 = mysqli_query($conexion,$consulta);
+		$row_cnt2 = mysqli_num_rows($resultado);
+		if($row_cnt > 0){
+			$jwt= createToken($codigo,$password);
+			echo json_encode(array('jwt_admin' => $jwt,'codigo_admin'=> $codigo));
+		}else{
+			echo json_encode(array("message" => 'Usuario o contraseña incorrectos'));
+		}
 	}
 }
 

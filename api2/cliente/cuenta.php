@@ -25,6 +25,5 @@ if(isset($data["idUser"])){
 					}
 				}
 }		
-	
 
 /* refactorizar */
