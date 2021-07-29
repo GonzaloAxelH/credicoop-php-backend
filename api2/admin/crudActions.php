@@ -1,8 +1,8 @@
 <?php 
-function eliminar($dni,$table,$conexion){
-			$sql="DELETE FROM ".$table." where dni='$dni'";
+function eliminar($dni,$conexion){
+			$sql="DELETE FROM cliente where dni='$dni'";
 			$conexion->query($sql);  
-		return json_encode(array('message:'=> "eliminado"));
+			return json_encode(array('message:'=> "eliminado"));
 }
 
 function update($data,$conexion){
@@ -12,8 +12,9 @@ function update($data,$conexion){
 			$direccion=$data['direccion'];
 			$correo=$data['correo'];
 			$celular=(int)$data['telefono'];
-			 $sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular where dni='$dni'";
+			$sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular where dni='$dni'";
 			$conexion->query($sql);	
+
 			return json_encode(array('message:'=> "actualizado","consuta"=> $sql));
 }
 

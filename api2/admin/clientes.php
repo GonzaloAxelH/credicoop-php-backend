@@ -19,8 +19,13 @@ $data = json_decode(file_get_contents('php://input'),true);
 if($data['update']){
 	echo update($data,$conexion);
 }else{
-	$resultado = getTable("cliente",$conexion);
-	echo json_encode($resultado);
+	if($data['delete']){
+		echo eliminar($dni,$conexion);
+	}else{
+		$resultado = getTable("cliente",$conexion);
+		echo json_encode($resultado);
+
+	}
 }
 
 
