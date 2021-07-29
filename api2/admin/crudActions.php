@@ -1,20 +1,18 @@
 <?php 
-function eliminar($id,$table,$conexion){
-			$sql="DELETE FROM ".$table." where id_cliente='$id'";
+function eliminar($dni,$table,$conexion){
+			$sql="DELETE FROM ".$table." where dni='$dni'";
 			$conexion->query($sql);  
 		return json_encode(array('message:'=> "eliminado"));
 }
 
 function update($data,$conexion){
 			$dni=$data['dni'];
-			$nombre=$data['nombre'];
-			$apellido=$data['apellido'];
-			$id=$data['id_cliente'];
+			$nombre=$data['nombres'];
+			$apellido=$data['apellidos'];
 			$direccion=$data['direccion'];
 			$correo=$data['correo'];
-			$estadoCivil =$data['estadoCivil'];
-			$celular=(int)$data['celular'];
-			 $sql="UPDATE cliente SET dni='$dni',nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular,estadoCivil='$estadoCivil' where id_cliente='$id'";
+			$celular=(int)$data['telefono'];
+			 $sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular where dni='$dni'";
 			$conexion->query($sql);	
 			return json_encode(array('message:'=> "actualizado"));
 }
