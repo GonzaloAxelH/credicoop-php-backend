@@ -1,7 +1,13 @@
 <?php 
-function eliminar($dni,$conexion){
-			$sql="DELETE FROM cliente where dni='$dni'";
-			$conexion->query($sql);  
+function eliminar($id,$conexion){
+			$sql="DELETE FROM transaccion where idcliente='$id'";
+			$conexion->query($sql);
+
+			$sql2 ="DELETE FROM cuentacliente where idcliente='$id'";
+			$conexion->query($sql2);  
+			
+			$sql3 ="DELETE FROM cliente where id_cliente='$id'";
+			$conexion->query($sql3);  
 			return json_encode(array('message:'=> "eliminado","consulta"=> $sql));
 }
 

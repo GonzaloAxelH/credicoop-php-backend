@@ -20,7 +20,7 @@ if($data['update']){
 	echo update($data,$conexion);
 }else{
 	if($data['delete']){
-		echo eliminar($data['dni'],$conexion);
+		echo eliminar($data['idcliente'],$conexion);
 	}else{
 		$resultado = getTable("cliente",$conexion);
 		echo json_encode($resultado);
