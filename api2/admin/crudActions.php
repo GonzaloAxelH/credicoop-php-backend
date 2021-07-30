@@ -45,14 +45,15 @@ function insertar($data,$conexion){
 }
 
 function insertarCliente($data,$conexion){
-			$dni=$data['dni'];
+			$dni=(int)$data['dni'];
+			$id_cliente=(int)$data['id_cliente'];
 			$nombre=$data['nombres'];
 			$apellidos=$data['apellidos'];
 			$direccion=$data['direccion'];
 			$correo=$data['correo'];
 			$celular=(int)$data['celular'];
-			$ruc= $dni .  "19";
-	$sql="INSERT INTO cliente(dni,nombre,apellidos,direccion,celular,correo,estadoCivil,ruc) values($dni,$nombre,$apellidos,$direccion,$celular,$correo,'soltero',$ruc)";
+			$ruc= (int)($data['dni'] . "19");
+	$sql="INSERT INTO cliente(id_cliente,dni,nombre,apellidos,direccion,celular,correo,estadoCivil,ruc,fechaNac) values($id_cliente,$dni,'$nombre','$apellidos','$direccion',$celular,'$correo','soltero',$ruc,'2000-10-25')";
 	//$conexion->query($sql);	
 	echo json_encode(array('message:'=> "cliente insertado" ,"consulta"=> $sql));
 }
