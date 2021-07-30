@@ -22,9 +22,13 @@ if($data['update']){
 	if($data['delete']){
 		echo eliminar($data['idcliente'],$conexion);
 	}else{
-		$resultado = getTable("cliente",$conexion);
-		echo json_encode($resultado);
-
+		if($data['insert']){
+			echo insertarCliente($data,$conexion);
+		}else{
+			$resultado = getTable("cliente",$conexion);
+			echo json_encode($resultado);
+		}
+	
 	}
 }
 
