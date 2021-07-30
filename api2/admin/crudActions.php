@@ -52,7 +52,7 @@ function insertarCliente($data,$conexion){
 			$direccion=$data['direccion'];
 			$correo=$data['correo'];
 			$celular=(int)$data['celular'];
-			$ruc= (int)($data['dni'] . "19");
+			$ruc= (int)($data['dni'] . "1");
 	$sql="INSERT INTO cliente(id_cliente,dni,nombre,apellidos,direccion,celular,correo,estadoCivil,ruc,fechaNac) values($id_cliente,$dni,'$nombre','$apellidos','$direccion',$celular,'$correo','soltero',$ruc,'2000-10-25')";
 	$conexion->query($sql);	
 	echo json_encode(array('message:'=> "cliente insertado" ,"consulta"=> $sql));
