@@ -12,13 +12,14 @@ function eliminar($id,$conexion){
 }
 
 function update($data,$conexion){
-			$dni=$data['dni'];
+			$dni=(int)$data['dni'];
+			$id_cliente =(int)$data['id_cliente'];
 			$nombre=$data['nombres'];
 			$apellido=$data['apellidos'];
 			$direccion=$data['direccion'];
 			$correo=$data['correo'];
 			$celular=(int)$data['telefono'];
-			$sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',celular=$celular where dni='$dni'";
+			$sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',dni=$dni,celular=$celular where id_cliente=$id_cliente";
 			$conexion->query($sql);	
 
 			return json_encode(array('message:'=> "actualizado","consuta"=> $sql));
