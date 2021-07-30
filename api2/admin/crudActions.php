@@ -18,7 +18,7 @@ function update($data,$conexion){
 			$apellido=$data['apellidos'];
 			$direccion=$data['direccion'];
 			$correo=$data['correo'];
-			$celular=(int)$data['telefono'];
+			$celular=(int)$data['celular'];
 			$sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellido',direccion='$direccion',correo='$correo',dni=$dni,celular=$celular where id_cliente=$id_cliente";
 			$conexion->query($sql);	
 
