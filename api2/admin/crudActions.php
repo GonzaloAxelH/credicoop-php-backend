@@ -44,3 +44,17 @@ function insertar($data,$conexion){
 	echo json_encode(array('message:'=> "pago insertado"));
 }
 
+function insertarCliente($data,$conexion){
+			$dni=$data['dni'];
+			$nombre=$data['nombres'];
+			$apellidos=$data['apellidos'];
+			$direccion=$data['direccion'];
+			$correo=$data['correo'];
+			$celular=(int)$data['celular'];
+			$ruc= $dni .  "19";
+	$sql="INSERT INTO cliente(dni,nombre,apellidos,direccion,celular,correo,estadoCivil,ruc) values($dni,$nombre,$apellidos,$direccion,$celular,$correo,'soltero',$ruc)";
+	//$conexion->query($sql);	
+	echo json_encode(array('message:'=> "cliente insertado" ,"consulta"=> $sql));
+}
+
+
